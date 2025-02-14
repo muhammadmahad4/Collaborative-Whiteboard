@@ -1,5 +1,3 @@
-### README.md
-
 # Interactive WhiteBoard
 
 Interactive whiteboard is an application that allows multiple users to draw, chat, and collaborate in real-time. The application supports various drawing tools, including freehand drawing, rectangles, circles, and lines. Users can also change the brush size, save their drawings, and switch between light and dark themes.
@@ -34,7 +32,19 @@ Interactive whiteboard is an application that allows multiple users to draw, cha
    git clone https://github.com/muhammadmahad4/Collaborative-Whiteboard.git
    ```
 
-2. Install the dependencies:
+2. Navigate into the project directory:
+
+   ```bash
+   cd Collaborative-Whiteboard
+   ```
+
+3. Navigate into the backend directory:
+
+   ```bash
+   cd backend
+   ```
+
+4. Install the dependencies:
 
    ```bash
    npm install
@@ -45,10 +55,10 @@ Interactive whiteboard is an application that allows multiple users to draw, cha
 1. Start the backend server:
 
    ```bash
-   node backend/server.js
+   node server.js
    ```
 
-2. Open index.html in your web browser.
+2. Open `index.html` in your web browser.
 
 ### Usage
 
