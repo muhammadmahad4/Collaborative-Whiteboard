@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaos Theory - Interactive WhiteBoard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="sidebar">
+    <div id="timer">Timer: 0s</div>
+    <div id="users">
+      <h3>Active Users</h3>
+      <ul id="usersList"></ul>
+    </div>
+    <h3>Chat</h3>
+    <div id="chatContainer">
+      <div id="chatMessages"></div>
+      <div id="chatInput">
+        <input type="text" id="chatMessageInput" placeholder="Type a message...">
+        <button id="sendChatButton">Send</button>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <canvas id="whiteboard"></canvas>
+
+  <div id="sidebar">
+    <div id="tool">
+      <h3>Tools</h3>
+      <button id="eraseButton">Erase All</button>
+      <button id="eraseMineButton">Erase Mine</button>
+      <button id="textToolButton">Text Tool</button>
+      <button id="rectToolButton">Rectangle Tool</button>
+      <button id="circleToolButton">Circle Tool</button>
+      <button id="lineToolButton">Line Tool</button>
+      <button id="saveButton">Save Image</button>
+      <button id="themeButton">Change Theme</button>
+      <button id="brushSizeButton">Change Brush Size</button>
+      <label for="brushSize" id="brushSizeLabel" style="display: none;">Brush Size</label>
+      <input type="range" id="brushSize" min="1" max="10" value="2" style="display: none;">
+    </div>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
