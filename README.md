@@ -31,7 +31,7 @@ Interactive whiteboard is an application that allows multiple users to draw, cha
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/chaos-theory-whiteboard.git
+   git clone https://github.com/muhammadmahad4/Collaborative-Whiteboard.git
    ```
 
 2. Install the dependencies:
