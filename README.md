@@ -32,8 +32,7 @@ Interactive whiteboard is an application that allows multiple users to draw, cha
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/chaos-theory-whiteboard.git
-   cd chaos-theory-whiteboard
+   git clone https://github.com/your-username/chaos-theory-whiteboard.git](https://github.com/muhammadmahad4/Collaborative-Whiteboard.git
    ```
 
 2. Install the dependencies:
@@ -75,22 +74,3 @@ chaos-theory-whiteboard/
 │   └── script.js
 └── README.md
 ```
-
-### Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-### Acknowledgements
-
-- [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
-- [Node.js](https://nodejs.org/)
-- [MDN Web Docs](https://developer.mozilla.org/)
-
-```
-
-Feel free to modify the content as needed to better fit your project.
-Feel free to modify the content as needed to better fit your project.
