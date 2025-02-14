@@ -1,6 +1,5 @@
 ### README.md
 
-```markdown
 # Interactive WhiteBoard
 
 Interactive whiteboard is an application that allows multiple users to draw, chat, and collaborate in real-time. The application supports various drawing tools, including freehand drawing, rectangles, circles, and lines. Users can also change the brush size, save their drawings, and switch between light and dark themes.
@@ -73,4 +72,3 @@ chaos-theory-whiteboard/
 │   ├── style.css
 │   └── script.js
 └── README.md
-```
