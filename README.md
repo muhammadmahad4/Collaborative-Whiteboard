@@ -1,11 +1,9 @@
-Sure! Below is a sample README file for your project. You can customize it further based on your specific requirements and details.
-
 ### README.md
 
 ```markdown
-# Chaos Theory - Interactive WhiteBoard
+# Interactive WhiteBoard
 
-Chaos Theory is an interactive whiteboard application that allows multiple users to draw, chat, and collaborate in real-time. The application supports various drawing tools, including freehand drawing, rectangles, circles, and lines. Users can also change the brush size, save their drawings, and switch between light and dark themes.
+Interactive whiteboard is an application that allows multiple users to draw, chat, and collaborate in real-time. The application supports various drawing tools, including freehand drawing, rectangles, circles, and lines. Users can also change the brush size, save their drawings, and switch between light and dark themes.
 
 ## Features
 
@@ -15,7 +13,6 @@ Chaos Theory is an interactive whiteboard application that allows multiple users
 - Save drawings as images
 - Light and dark theme support
 - Real-time chat
-- Active users list with "YOU" label for the current user
 - Timer to track session duration
 
 ## Technologies Used
