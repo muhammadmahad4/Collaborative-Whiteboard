@@ -1,0 +1,78 @@
+### Explanation of Key Parts of the Solution
+
+The Collaborative Whiteboard application is designed to allow multiple users to draw, chat, and collaborate in real-time. Here is a detailed explanation of how the key parts of the solution work together:
+
+#### 1. Frontend (Client-Side)
+The frontend consists of HTML, CSS, and JavaScript files that provide the user interface and handle user interactions.
+
+- **HTML**: Defines the structure of the web page, including the canvas for drawing, the chat interface, and various buttons for tools and settings.
+- **CSS**: Contains styles to make the application visually appealing and responsive.
+- **JavaScript**: Handles the logic for drawing on the canvas, sending and receiving messages via WebSocket, and updating the UI based on user actions.
+
+#### 2. Backend (Server-Side)
+The backend is built using Node.js and handles real-time communication between clients.
+
+- **Node.js**: Sets up a WebSocket server that listens for connections from clients. It manages the communication between clients, ensuring that drawing actions and chat messages are broadcast to all connected users.
+
+#### 3. WebSocket Communication
+WebSocket is used for real-time communication between the frontend and backend. It allows for low-latency, bidirectional communication, which is essential for a collaborative application.
+
+- **Establishing Connection**: When a user opens the application, a WebSocket connection is established between the client and the server.
+- **Sending Messages**: When a user performs an action (e.g., drawing on the canvas, sending a chat message), the client sends a message to the server via WebSocket.
+- **Broadcasting Messages**: The server receives the message and broadcasts it to all connected clients, ensuring that everyone sees the same updates in real-time.
+
+#### 4. Handling Network Disruptions
+When the network connection is disrupted, the WebSocket connection may be lost. The application should handle this gracefully to ensure a smooth user experience.
+
+- **Detecting Disconnection**: The client can detect when the WebSocket connection is closed and display a message to the user indicating that the connection has been lost.
+- **Reconnecting**: The client can attempt to reconnect to the server automatically. Once reconnected, the client can synchronize with the server to ensure that any missed updates are received.
+
+### WebSocket Communication Details
+
+WebSocket enables real-time communication between a client and the server. It allows the server to push data to the client without the client explicitly requesting it.
+
+#### Client:
+- The client establishes a WebSocket connection to the server (localhost:8080).
+- The client sends all the drawing data including the coordinates and the color to the server.
+
+#### Server:
+- The server listens for incoming WebSocket connections on port 8080.
+- When the client connects, the server sends the current canvas state to the client for synchronization.
+- All the drawing data or clear requests are broadcasted by the server to all the connected clients.
+
+### Communication Flow
+
+The client first establishes a WebSocket connection to the server. As mentioned above, the current canvas state is sent to the client. Now when the user draws on the canvas, the client sends the drawing data (start and end coordinates, color) to the server which is then added to the canvasState by the server and is broadcasted to all the connected clients for real-time collaboration. When the user clicks the "Clear" button, the client sends a clear request to the server. After receiving the request, the server clears the canvasState and broadcasts the clear request to all clients.
+
+### Canvas Rendering
+
+The HTML5 `<canvas>` element has been used to render the whiteboard.
+
+#### Drawing Logic:
+- When the user presses the mouse button, the "mousedown" event is triggered and the draw flag is turned to true to indicate that the user is drawing and the starting coordinates of the line are captured.
+- When the user releases the mouse button, the "mouseup" event is triggered and the draw flag is turned to false to indicate that the user has stopped drawing.
+- The "mousemove" event is triggered when the mouse is moving. It checks if the draw flag is true (i.e., the user is holding the mouse button) and captures the current mouse coordinates (currentX, currentY) and sends it to the server.
+- The "drawLine" function draws a line on the canvas using the provided start and end coordinates and color. It uses the Canvas API. First, it sets the color of the line which is generated randomly for each user using the getRandomColor() function. Now a new path is started and the cursor is moved to the starting coordinates. Then the line is drawn from starting coordinates to the ending coordinates.
+- The "drawRect" function draws a rectangle on the canvas using the provided coordinates, width, height, and color.
+- The "drawCircle" function draws a circle on the canvas using the provided coordinates, radius, and color.
+
+Basically, when the user draws, the client performs two actions. Firstly, the client sends the drawing data to the server as already mentioned. Secondly, the drawLine(), drawRect(), or drawCircle() function is used by the client to render the shapes on the canvas locally.
+
+### State Synchronization
+
+The server maintains the canvas state, which is an array of all the strokes drawn on the canvas. When a new client connects, the server sends the current canvasState to the client and the client renders all the strokes in canvasState on their local canvas. When the server receives drawing data from a client, it adds the data to canvasState and broadcasts it to all connected clients.
+
+Giving a summary, let's suppose there are two users A and B. User A draws on the whiteboard (press the mouse button, move and then release it). Now the client sends the drawing data to the server. The server then broadcasts this data to all the connected clients (i.e., User B) and so User B is able to see what User A draws.
+
+### Chat Functionality
+
+The chat functionality allows users to send and receive messages in real-time.
+
+- When a user sends a chat message, the client sends the message to the server via WebSocket.
+- The server receives the chat message and broadcasts it to all connected clients.
+- Each client displays the received chat message in the chat interface.
+
+### Reconnections
+
+If the WebSocket connection is closed, the client attempts to reconnect after 1 second: `setTimeout(connectWebSocket, 1000);`
+
