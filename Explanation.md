@@ -25,11 +25,11 @@ BACK-END FILE STRUCTURE:
 COMMUNICATION FLOW:
 - **Establishing Connection**: When a user opens the application, a WebSocket connection is established between the client and the server, and the current canvas state is sent to the client ensuring that newly connected client has past drawings (state synchronization). Moreover, new client specific variables are initialised in backend as well as im frontend for that particular client eg userid and color. The client can now send messages to server via WebSocket.
 
-Code Snippet : 
+Code Snippet: <br>
 Server.js:
 1. `wss.on("connection", (ws) => {})`
 2. `wss.on("join", (ws) => {})`
-Script.js:
+Script.js:<br>
 `ws.onopen = () => {
     console.log("WebSocket connected");
     ws.send(JSON.stringify({ type: "join", data: { name: userName, color } }));
