@@ -5,7 +5,6 @@ const wss = new WebSocket.Server({ port: 8080 });
 const clients = new Map(); // Store clients with unique userIds
 const activeUsers = {};
 let drawingHistory = []; // Store all drawing and text events
-let redoStack = []; // Store undone events for redo
 let timerInterval;
 let timer = 0;
 let userIdCounter = 1;
