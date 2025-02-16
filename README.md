@@ -60,16 +60,44 @@ Interactive whiteboard is an application that allows multiple users to draw, cha
 
 2. Open `index.html` in your web browser.
 
-### Usage
+## Usage Instructions
 
-1. Open the application in your web browser.
-2. Enter your name when prompted.
-3. Use the tools in the sidebar to draw on the whiteboard.
-4. Adjust the brush size using the "Change Brush Size" button.
-5. Save your drawing using the "Save Image" button.
-6. Switch between light and dark themes using the "Change Theme" button.
-7. Chat with other users using the chat input at the bottom of the sidebar.
-8. View the list of active users in the sidebar.
+1. **Open the Application**: 
+   - Launch the application in your web browser.
+
+2. **Enter Your Name**: 
+   - When prompted, enter your name to identify yourself.
+
+3. **Using the Tools**:
+   - **Text Tool**:
+     - Click on the "Text Tool" button in the sidebar to activate it.
+     - Select any location on the whiteboard where you want to place the text.
+     - A prompt will appear asking you to input the text. Type your desired text and click "OK" to place it on the whiteboard.
+
+   - **Rectangle Tool**:
+     - Click on the "Rectangle Tool" button in the sidebar to activate it.
+     - Click on the whiteboard at the point where you want one corner of the rectangle to be.
+     - Hold down the mouse button and drag the mouse to define the rectangle's size. Release the mouse button to complete the shape.
+
+   - **Circle Tool**:
+     - Click on the "Circle Tool" button in the sidebar to activate it.
+     - Click on the whiteboard to set the center point of the circle.
+     - Hold down the mouse button and drag the mouse outward to adjust the radius. Release the mouse button to complete the circle.
+
+4. **Adjusting Brush Size**:
+   - Use the "Change Brush Size" button to modify the brush size for free drawing.
+
+5. **Saving Your Drawing**:
+   - Click the "Save Image" button to save your drawing as an image file.
+
+6. **Changing Themes**:
+   - Switch between light and dark themes by clicking the "Change Theme" button.
+
+7. **Chat with Other Users**:
+   - Use the chat input at the bottom of the sidebar to send messages to other users.
+
+8. **View Active Users**:
+   - Check the sidebar to see the list of active users currently connected to the whiteboard.
 
 ### File Structure
 
