@@ -29,7 +29,7 @@ Code Snippet: <br>
 Server.js:
 1. `wss.on("connection", (ws) => {})`
 2. `wss.on("join", (ws) => {})`
-Script.js:<br>
+<br>Script.js:<br>
 `ws.onopen = () => {
     console.log("WebSocket connected");
     ws.send(JSON.stringify({ type: "join", data: { name: userName, color } }));
