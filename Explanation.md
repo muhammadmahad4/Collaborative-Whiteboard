@@ -41,8 +41,8 @@ Code Example Snippet:
 Script.js:
 `ws.send()`
 
-- **Broadcasting Messages**: The server receives the message and broadcasts it to all connected clients, ensuring that everyone sees the same updates in real-time. for this functionality I have created a broadcast function in server side which is called whenever a new message is received from any client. 
-Code Snippet:
+- **Broadcasting Messages**: The server receives the message and broadcasts it to all connected clients, ensuring that everyone sees the same updates in real-time. for this functionality I have created a broadcast function in server side which is called whenever a new message is received from any client. <br>
+Code Snippet:<br>
 `function broadcast(message) {
   for (const client of clients.keys()) {
     if (client.readyState === WebSocket.OPEN) {
@@ -63,8 +63,8 @@ Giving a summary, let's suppose there are two users A and B. When both the clien
 the shape's details (like position, size, and color) are sent to the server for synchronization.
 
 #### 6. Handling Network Disruptions
-When the network connection is disrupted, the client attempts to reconnect after 1 second. this ensures a smooth user experience.
-Code Snippet: `setTimeout(connectWebSocket, 1000);`
+When the network connection is disrupted, the client attempts to reconnect after 1 second. this ensures a smooth user experience. <br>
+Code Snippet:<br> `setTimeout(connectWebSocket, 1000);`
 
 #### 7. Chat Functionality
 The chat functionality allows users to send and receive messages in real-time.
