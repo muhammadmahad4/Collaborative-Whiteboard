@@ -62,11 +62,11 @@ Giving a summary, let's suppose there are two users A and B. When both the clien
 - **Mouse Up event**: When the mouse button is released, the drawing stops, and the final position is recorded. Depending on the current tool (line, rectangle, circle, etc.), the appropriate shape is drawn on the canvas, and
 the shape's details (like position, size, and color) are sent to the server for synchronization.
 
-#### 4. Handling Network Disruptions
+#### 6. Handling Network Disruptions
 When the network connection is disrupted, the client attempts to reconnect after 1 second. this ensures a smooth user experience.
 Code Snippet: `setTimeout(connectWebSocket, 1000);`
 
-#### 6. Chat Functionality
+#### 7. Chat Functionality
 The chat functionality allows users to send and receive messages in real-time.
 - When a user sends a chat message, the client sends the message to the server via WebSocket.
 - The server receives the chat message and broadcasts it to all connected clients.
