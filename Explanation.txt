@@ -3,12 +3,9 @@
 The Collaborative Whiteboard application is designed to allow multiple users to draw, chat, and collaborate in real-time. Here is a detailed explanation of how the key parts of the solution work together:
 
 #### 1. Frontend (Client-Side)
-
 - The frontend consists of HTML, CSS, and JavaScript files that provide the user interface and handle user interactions. This accounts for the client-side.
-
 - The client establishes a WebSocket connection to the server (localhost:8080).
 Code Snippet: `ws = new WebSocket("ws://localhost:8080");`
-
 - Once the client draws something, it sends all the drawing data including the coordinates and the color to the server for synchronization and broadcasting.
 
 FRONT-END FILE STRUCTURE:
@@ -61,9 +58,7 @@ Giving a summary, let's suppose there are two users A and B. When both the clien
 
 #### 5. How Drawing logic works:
 - **Mouse Down event**: When the user presses the mouse button down on the canvas, the drawing process begins, and the starting coordinates (startX, startY) are recorded, and the drawing variable is set to true to indicate that drawing is in progress.
-
 - **Mouse Move event**: As the user moves the mouse while holding down the button, the current position (x, y) is tracked, and a line is drawn from the previous position (prevX, prevY) to the current position (x, y). The drawing command is sent to the server using WebSocket to synchronize the drawing with other users, while The previous coordinates are updated for the next movement.
-
 - **Mouse Up event**: When the mouse button is released, the drawing stops, and the final position is recorded. Depending on the current tool (line, rectangle, circle, etc.), the appropriate shape is drawn on the canvas, and
 the shape's details (like position, size, and color) are sent to the server for synchronization.
 
@@ -71,12 +66,8 @@ the shape's details (like position, size, and color) are sent to the server for 
 When the network connection is disrupted, the client attempts to reconnect after 1 second. this ensures a smooth user experience.
 Code Snippet: `setTimeout(connectWebSocket, 1000);`
 
-
-
 #### 6. Chat Functionality
-
 The chat functionality allows users to send and receive messages in real-time.
-
 - When a user sends a chat message, the client sends the message to the server via WebSocket.
 - The server receives the chat message and broadcasts it to all connected clients.
 - Each client displays the received chat message in the chat interface.
