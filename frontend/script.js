@@ -28,8 +28,9 @@ const brushSizeLabel = document.getElementById("brushSizeLabel");
 ///////////////////VARIABLE INITISLIZATION//////////////////////////////////
 
 let activeUsers = {};
+
 //GENERARATION OF RANDOM COLOR:
-const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const color = generateRandomColor();
 
 let isLineToolActive = false;
 let isTextToolActive = false;
@@ -54,6 +55,9 @@ let userName = prompt("Enter your name:") || "Anonymous";
 
 
 /////////////////////////FUNCTIONS//////////////////////////////////////////
+function generateRandomColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 // Initialize WebSocket connection
 function connectWebSocket() {
   ws = new WebSocket("ws://localhost:8080");
